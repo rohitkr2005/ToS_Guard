@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - ToS Guard</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="canonical" href="{{ canonical_base }}/privacy">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+    // Theme initialization
+    (function() {
+      const savedTheme = localStorage.getItem('tos_guard_theme') || 'system';
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (savedTheme === 'system' && systemDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+</head>
+<body class="min-h-full flex flex-col bg-zinc-100 dark:bg-black text-zinc-900 dark:text-zinc-100 font-sans transition-colors duration-150">
+
+  <!-- Navbar -->
+  <header class="border-b border-zinc-200 dark:border-zinc-800/80 bg-white/95 dark:bg-zinc-950/90 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-3 text-zinc-950 dark:text-white font-bold text-base hover:opacity-85">
+        <div class="w-8 h-8 rounded-lg bg-zinc-900 dark:bg-zinc-800 border border-zinc-700/60 flex items-center justify-center text-white">
+          <svg class="w-4 h-4 text-zinc-100" viewBox="0 0 32 32" fill="none">
+            <path d="M16 3L5 7v9c0 7.2 4.7 13.9 11 16 6.3-2.1 11-8.8 11-16V7L16 3z" fill="currentColor"/>
+            <path d="M14 16.5l-2.5-2.5-1.4 1.4 3.9 3.9 7-7-1.4-1.4L14 16.5z" fill="#09090b"/>
+          </svg>
+        </div>
+        <span>ToS Guard</span>
+      </a>
+
+      <div class="flex items-center space-x-4">
+        <a href="/" class="text-xs font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white">Scanner</a>
+        <a href="/terms" class="text-xs font-semibold text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white">Terms</a>
+        
+        <!-- 3-Mode Theme Selector Icons (Light, Dark, System) -->
+        <div class="flex items-center bg-zinc-200/70 dark:bg-zinc-900 p-0.5 rounded-lg border border-zinc-300 dark:border-zinc-800" role="group" aria-label="Theme selector">
+          <button type="button" id="themeLightBtn" onclick="setAppTheme('light')" class="p-1.5 rounded-md text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition cursor-pointer" title="Light Mode" aria-label="Light Mode">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          </button>
+          <button type="button" id="themeDarkBtn" onclick="setAppTheme('dark')" class="p-1.5 rounded-md text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition cursor-pointer" title="Dark Mode" aria-label="Dark Mode">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+          </button>
+          <button type="button" id="themeSystemBtn" onclick="setAppTheme('system')" class="p-1.5 rounded-md text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition cursor-pointer" title="Follow System Theme" aria-label="System Theme">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 py-10">
+    <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-8 sm:p-10 shadow-sm space-y-8">
+      
+      <div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-zinc-950 dark:text-white">Privacy Policy</h1>
+        <p class="mt-2 text-xs text-zinc-500 dark:text-zinc-400 font-mono">Last Updated: October 2026 | Effective for {{ custom_domain }}</p>
+      </div>
+
+      <section class="space-y-3">
+        <h2 class="text-base font-bold text-zinc-950 dark:text-white">1. Core Privacy Principle</h2>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          ToS Guard is designed with strict data minimization. We do not store, archive, sell, or commercialize the legal text you submit for contract evaluation. Text submitted to the scanner is processed ephemerally in server memory solely to generate your requested risk assessment.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-base font-bold text-zinc-950 dark:text-white">2. Information We Process</h2>
+        <ul class="list-disc pl-5 space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
+          <li><strong>Submitted Legal Text:</strong> The text pasted into the scanner is processed in-memory during the duration of the analysis request and is discarded immediately after response generation.</li>
+          <li><strong>No User Account:</strong> ToS Guard requires no user login, credit card, or personal information to access.</li>
+          <li><strong>Browser Preferences:</strong> Your display mode preference (Dark, Light, or System) is stored locally in your browser storage.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-base font-bold text-zinc-950 dark:text-white">3. Third Party Processors</h2>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          To execute contract clause classification and score calculation, submitted text passages are transmitted over encrypted HTTPS to inference endpoints for machine analysis. Processing is governed by standard encrypted transport and strict ephemeral execution.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-base font-bold text-zinc-950 dark:text-white">4. Cookies and Tracking</h2>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          ToS Guard does not use third party advertising cookies, commercial tracking pixels, or cross-site fingerprinting scripts. Essential browser local storage is strictly restricted to user interface settings such as theme preferences.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="text-base font-bold text-zinc-950 dark:text-white">5. Contact and Inquiries</h2>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          For questions regarding this privacy policy or data handling practices, contact support at privacy@{{ custom_domain }}.
+        </p>
+      </section>
+
+      <div class="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex justify-between items-center text-xs text-zinc-500">
+        <a href="/" class="text-zinc-950 dark:text-white underline font-semibold">Return to Contract Scanner</a>
+        <a href="/terms" class="text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300">Terms of Service</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-zinc-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-950 py-6 text-xs text-zinc-500 dark:text-zinc-400">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div>ToS Guard. All rights reserved.</div>
+      <div class="flex items-center space-x-4">
+        <a href="/privacy" class="hover:underline">Privacy Policy</a>
+        <a href="/terms" class="hover:underline">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function updateThemeIconButtons(activeTheme) {
+      const lightBtn = document.getElementById("themeLightBtn");
+      const darkBtn = document.getElementById("themeDarkBtn");
+      const sysBtn = document.getElementById("themeSystemBtn");
+      const activeClasses = ["bg-white", "dark:bg-zinc-800", "text-zinc-950", "dark:text-white", "shadow-xs"];
+      const inactiveClasses = ["text-zinc-500", "dark:text-zinc-400"];
+
+      [lightBtn, darkBtn, sysBtn].forEach(btn => {
+        if (!btn) return;
+        btn.classList.remove(...activeClasses);
+        btn.classList.add(...inactiveClasses);
+      });
+
+      if (activeTheme === "light" && lightBtn) {
+        lightBtn.classList.remove(...inactiveClasses);
+        lightBtn.classList.add(...activeClasses);
+      } else if (activeTheme === "dark" && darkBtn) {
+        darkBtn.classList.remove(...inactiveClasses);
+        darkBtn.classList.add(...activeClasses);
+      } else if (activeTheme === "system" && sysBtn) {
+        sysBtn.classList.remove(...inactiveClasses);
+        sysBtn.classList.add(...activeClasses);
+      }
+    }
+
+    function setAppTheme(theme) {
+      localStorage.setItem('tos_guard_theme', theme);
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      }
+      updateThemeIconButtons(theme);
+    }
+
+    const currentTheme = localStorage.getItem('tos_guard_theme') || 'system';
+    updateThemeIconButtons(currentTheme);
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if ((localStorage.getItem('tos_guard_theme') || 'system') === 'system') {
+        setAppTheme('system');
+      }
+    });
+  </script>
+</body>
+</html>

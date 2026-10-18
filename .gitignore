@@ -1,0 +1,12 @@
+# Environment variables (NEVER COMMIT SENSITIVE KEYS)
+.env
+
+# Python Virtual Environment
+venv/
+__pycache__/
+*.pyc
+
+# IDE / System
+.vscode/
+.idea/
+.DS_Store
